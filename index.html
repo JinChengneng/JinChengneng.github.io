@@ -603,7 +603,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/" itemprop="url">【机器学习】</a></h1>
+                <a class="post-title-link" href="/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/" itemprop="url">【机器学习】（开发中...）</a></h1>
         
 
         <div class="post-meta">
@@ -647,7 +647,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  446 字
+                  451 字
                 </span>
               
 
@@ -685,32 +685,14 @@
 
       
         
-          
-            <p>$F_{\mu}$<br>$F_a + F_b = F_c$</p>
-<p>$F_a = F_b + F_c + F_{\mu}$</p>
-<p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p>
-<span>$$\begin{aligned}
-\dot{x} &amp; = \sigma(y-x) \\
-\dot{y} &amp; = \rho x - y - xz \\
-\dot{z} &amp; = -\beta z + xy
-\end{aligned}$$</span><!-- Has MathJax -->
-<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
-<li>进一步理解线性回归和梯度下降的原理。</li>
-<li>在小规模数据集上实践。</li>
-<li>体会优化和调参的过程。</li>
-</ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
-<li>线性回归使用的是LIBSVM Data中的Housing数据，包含506个样本，每个样本有13个属性。请自行下载scaled版本，并将其切分为训练集，验证集。 </li>
-<li>线性分类使用的是LIBSVM Data中的australian数据，包含690个样本，每个样本有14 个属性。请自行下载scaled版本，并将其切分为训练集，验证集。</li>
-</ul>
-<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="线性回归和梯度下降"><a href="#线性回归和梯度下降" class="headerlink" title="线性回归和梯度下降"></a>线性回归和梯度下降</h3><ol>
-<li>读取实验数据，使用sklearn库的load_svmlight_file函数读取数据。</li>
-<li>将数据集切分为训练集和验证集，本次实验不切分测试集。使用train_test_split函数切分数据集。</li>
-<li>线性模型参数初始化，可以考虑全零初始化，随机初始化或者正态分布初始化。<br>选择Loss函数及对其求导，过程详见课件ppt。<br>求得所有样本对Loss函数的梯度。<br>取梯度的负方向，记为。<br>更新模型参数，。为学习率，是人为调整的超参数。<br>在训练集上测试并得到Loss函数值，在验证集上测试并得到Loss函数值。<br>重复步骤5-8若干次，画出和随迭代次数的变化图。<br>$F$</li>
-</ol>
-<p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>
-
-          
+          <p>正在开发中…<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
