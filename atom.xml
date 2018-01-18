@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-18T13:07:39.683Z</updated>
+  <updated>2018-01-18T13:10:27.509Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【论文笔记】词向量性能评价任务</title>
-    <link href="http://yoursite.com/2018/01/18/%E3%80%90%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E3%80%91%E8%AF%8D%E5%90%91%E9%87%8F%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E4%BB%BB%E5%8A%A1/"/>
-    <id>http://yoursite.com/2018/01/18/【论文笔记】词向量性能评价任务/</id>
+    <title>【论文笔记】评价词向量性能的八个任务</title>
+    <link href="http://yoursite.com/2018/01/18/%E3%80%90%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E3%80%91%E8%AF%84%E4%BB%B7%E8%AF%8D%E5%90%91%E9%87%8F%E6%80%A7%E8%83%BD%E7%9A%84%E5%85%AB%E4%B8%AA%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://yoursite.com/2018/01/18/【论文笔记】评价词向量性能的八个任务/</id>
     <published>2018-01-18T13:02:42.000Z</published>
-    <updated>2018-01-18T13:07:39.683Z</updated>
+    <updated>2018-01-18T13:10:27.509Z</updated>
     
     <content type="html"><![CDATA[<p>词向量的优劣可以从三个任务类型的八个任务进行综合评定。此篇博文简述了评价词向量性能的八个任务。</p><a id="more"></a><h2 id="语义属性（Sementic-Properties"><a href="#语义属性（Sementic-Properties" class="headerlink" title="语义属性（Sementic Properties)"></a>语义属性（Sementic Properties)</h2><h3 id="词语相似度（Word-Similarity）"><a href="#词语相似度（Word-Similarity）" class="headerlink" title="词语相似度（Word Similarity）"></a>词语相似度（Word Similarity）</h3><p>测试过程用的是WordSimilarity-353测试集，他包含353对英文词汇和人工对这些词对之间的语义相关度的评测值。词向量的效果比较的是两个词向量的余弦距离的Pearson相关性与人工打分的平均分数的相似程度。</p><h3 id="同义词选择题-Synonym-Question"><a href="#同义词选择题-Synonym-Question" class="headerlink" title="同义词选择题(Synonym Question)"></a>同义词选择题(Synonym Question)</h3><p>测试过程用的是托福考试中的80个同义词选择题，每道选择题有四个选项，选择问题与选项中余弦距离最近的选项，并评估最终整体的准确性。</p><h3 id="语义类比问题（Semantic-Analogy-Question）"><a href="#语义类比问题（Semantic-Analogy-Question）" class="headerlink" title="语义类比问题（Semantic Analogy Question）"></a>语义类比问题（Semantic Analogy Question）</h3><p>完成大约9000个语义类比问题，问题类似于“ man is to (woman) as king is to queen”。通过计算（queen-king+man）的最近词向量作为问题的答案，并评估整体的准确性。</p><h3 id="语法类比问题（Syntactic-Amalogy-Question）"><a href="#语法类比问题（Syntactic-Amalogy-Question）" class="headerlink" title="语法类比问题（Syntactic Amalogy Question）"></a>语法类比问题（Syntactic Amalogy Question）</h3><p>完成大约10500个语法类比问题，问题类似于“ predict is to (predicting) as dance is to dancing”, 通过计算（dancing - dance + predict）的最近词向量作为问题的答案，并评估整体的准确性。</p><h2 id="将词向量作为特征-Embedding-as-Features"><a href="#将词向量作为特征-Embedding-as-Features" class="headerlink" title="将词向量作为特征 (Embedding as Features)"></a>将词向量作为特征 (Embedding as Features)</h2><h3 id="文本分类-Text-Classification"><a href="#文本分类-Text-Classification" class="headerlink" title="文本分类 (Text Classification)"></a>文本分类 (Text Classification)</h3><p>使用词向量的加权平均值作为文本的表示，然后应用逻辑回归来执行文本分类。 每个单词的权重是其出现频率。使用的数据集是IMDB数据集。</p><h3 id="命名实体识别-Named-entity-recognization"><a href="#命名实体识别-Named-entity-recognization" class="headerlink" title="命名实体识别 (Named entity recognization)"></a>命名实体识别 (Named entity recognization)</h3><h2 id="用词向量初始化神经网络-Embedding-as-the-Initialization-of-Neural-Networks"><a href="#用词向量初始化神经网络-Embedding-as-the-Initialization-of-Neural-Networks" class="headerlink" title="用词向量初始化神经网络 (Embedding as the Initialization of Neural Networks)"></a>用词向量初始化神经网络 (Embedding as the Initialization of Neural Networks)</h2><p> 在最近的NLP任务的神经网络方法中，词向量被用来初始化第一层。</p><h3 id="句子情感分析-sentence-level-sentiment-classfication"><a href="#句子情感分析-sentence-level-sentiment-classfication" class="headerlink" title="句子情感分析 (sentence-level sentiment classfication)"></a>句子情感分析 (sentence-level sentiment classfication)</h3><p>使用卷积神经网络(CNN)在斯坦福情绪树库数据集上进行句子情感分类，重复实验五次，并展示这些实验的平均准确性。</p><h2 id="词性标注-Part-of-speech-Tagging"><a href="#词性标注-Part-of-speech-Tagging" class="headerlink" title="词性标注 (Part-of-speech Tagging)"></a>词性标注 (Part-of-speech Tagging)</h2><p>们使用Ronan Collobert及其同事提出的神经网络对华尔街日报数据进行词性标注，并评估准确性。</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;词向量的优劣可以从三个任务类型的八个任务进行综合评定。此篇博文简述了评价词向量性能的八个任务。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【基础定义】异构数据融合与共享项目基础定义总结</title>
+    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E3%80%91%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/11/18/【基础定义】异构数据融合与共享基础定义总结/</id>
+    <published>2017-11-18T04:27:56.000Z</published>
+    <updated>2017-11-18T04:59:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="AOP思想"><a href="#AOP思想" class="headerlink" title="AOP思想"></a>AOP思想</h2><p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p><p>这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。</p><a id="more"></a><p>refs：</p><ul><li><p><a href="https://baike.baidu.com/item/AOP/1332219?fr=aladdin" target="_blank" rel="external">AOP （面向切面编程）</a></p></li><li><p><a href="https://www.zhihu.com/question/24863332" target="_blank" rel="external">什么是面向切面编程AOP？</a></p></li></ul><h2 id="CAP原理"><a href="#CAP原理" class="headerlink" title="CAP原理"></a>CAP原理</h2><ul><li>Consistency(一致性), 数据一致更新，所有数据变动都是同步的</li><li>Availability(可用性), 好的响应性能</li><li>Partition tolerance(分区容错性) 可靠性</li></ul><p>定理：任何分布式系统只可同时满足二点，没法三者兼顾。</p><p>忠告：架构师不要将精力浪费在如何设计能满足三者的完美分布式系统，而是应该进行取舍。</p><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li></ul><h2 id="ACID模型"><a href="#ACID模型" class="headerlink" title="ACID模型"></a>ACID模型</h2><p>关系数据库的ACID模型拥有 高一致性 + 可用性 很难进行分区：</p><ul><li>Atomicity 原子性：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。</li><li><p>Consistency 一致性. 一个事务可以封装状态改变（除非它是一个只读的）。事务必须始终保持系统处于一致的状态，不管在任何给定的时间并发事务有多少。</p></li><li><p>Isolation 隔离性. 如果有两个事务，运行在相同的时间内，执行相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。事务将假定只有它自己在操作数据库，彼此不知晓。</p></li><li>Durability 持久性. 在事务完成以后，该事务对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li><li><a href="https://baike.baidu.com/item/acid/10738?fr=aladdin" target="_blank" rel="external">acid （数据库事务正确执行的四个基本要素的缩写）</a></li></ul><h2 id="BASE思想"><a href="#BASE思想" class="headerlink" title="BASE思想"></a>BASE思想</h2><p>BASE模型反ACID模型，完全不同ACID模型，牺牲高一致性，获得可用性或可靠性：</p><ul><li>Basically Available 基本可用。基本可用是指分布式系统在出现故障的时候，允许损失部分可用性，即保证核心可用。</li><li>Soft state 软状态 状态可以有一段时间不同步，异步。软状态是指允许系统存在中间状态，而该中间状态不会影响系统整体可用性。分布式存储中一般一份数据至少会有三个副本，允许不同节点间副本同步的延时就是软状态的体现。</li><li>Eventually consistent 最终一致，最终数据是一致的就可以了，而不是时时高一致。最终一致性是指系统中的所有数据副本经过一定时间后，最终能够达到一致的状态。弱一致性和强一致性相反，最终一致性是弱一致性的一种特殊情况。</li></ul><p>ACID是传统数据库常用的设计理念，追求强一致性模型。BASE支持的是大型分布式系统，提出通过牺牲强一致性获得高可用性。</p><p>ACID和BASE代表了两种截然相反的设计哲学，在分布式系统设计的场景中，系统组件对一致性要求是不同的，因此ACID和BASE又会结合使用。</p><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li><li><a href="http://www.cnblogs.com/exceptioneye/p/5452601.html" target="_blank" rel="external">分布式系统的BASE理论</a></li></ul><h2 id="ASR"><a href="#ASR" class="headerlink" title="ASR"></a>ASR</h2><p>ASR：重要的架构需求，会对架构产生深远影响的需求；</p><p>ASR的几种获取方法：需求文档，采访利益相关者，理解商业目标，效应数；</p><h2 id="SOA模型"><a href="#SOA模型" class="headerlink" title="SOA模型"></a>SOA模型</h2><p>面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）通过这些服务之间定义良好的接口和契约联系起来。</p><p>SOA的精髓是严格的松散耦合，大家按照一个契约（service interface）来进行交流，不允许shared memory，不允许back door，不允许直接访问其它服务的数据。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;AOP思想&quot;&gt;&lt;a href=&quot;#AOP思想&quot; class=&quot;headerlink&quot; title=&quot;AOP思想&quot;&gt;&lt;/a&gt;AOP思想&lt;/h2&gt;&lt;p&gt;AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。&lt;/p&gt;
+&lt;p&gt;这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。&lt;/p&gt;
     
     </summary>
     
@@ -51,25 +70,6 @@
 &lt;p&gt;$F_a = F_b + F_c + F_{\mu}$&lt;/p&gt;
 &lt;p&gt;公式是这样的 &lt;span&gt;$F_a = F_b + F_c + F_{\mu}$&lt;/span&gt;&lt;!-- Has MathJax 
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>【基础定义】异构数据融合与共享项目基础定义总结</title>
-    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E3%80%91%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2017/11/18/【基础定义】异构数据融合与共享基础定义总结/</id>
-    <published>2017-11-18T04:27:56.000Z</published>
-    <updated>2017-11-18T04:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="AOP思想"><a href="#AOP思想" class="headerlink" title="AOP思想"></a>AOP思想</h2><p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p><p>这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。</p><a id="more"></a><p>refs：</p><ul><li><p><a href="https://baike.baidu.com/item/AOP/1332219?fr=aladdin" target="_blank" rel="external">AOP （面向切面编程）</a></p></li><li><p><a href="https://www.zhihu.com/question/24863332" target="_blank" rel="external">什么是面向切面编程AOP？</a></p></li></ul><h2 id="CAP原理"><a href="#CAP原理" class="headerlink" title="CAP原理"></a>CAP原理</h2><ul><li>Consistency(一致性), 数据一致更新，所有数据变动都是同步的</li><li>Availability(可用性), 好的响应性能</li><li>Partition tolerance(分区容错性) 可靠性</li></ul><p>定理：任何分布式系统只可同时满足二点，没法三者兼顾。</p><p>忠告：架构师不要将精力浪费在如何设计能满足三者的完美分布式系统，而是应该进行取舍。</p><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li></ul><h2 id="ACID模型"><a href="#ACID模型" class="headerlink" title="ACID模型"></a>ACID模型</h2><p>关系数据库的ACID模型拥有 高一致性 + 可用性 很难进行分区：</p><ul><li>Atomicity 原子性：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。</li><li><p>Consistency 一致性. 一个事务可以封装状态改变（除非它是一个只读的）。事务必须始终保持系统处于一致的状态，不管在任何给定的时间并发事务有多少。</p></li><li><p>Isolation 隔离性. 如果有两个事务，运行在相同的时间内，执行相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。事务将假定只有它自己在操作数据库，彼此不知晓。</p></li><li>Durability 持久性. 在事务完成以后，该事务对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li><li><a href="https://baike.baidu.com/item/acid/10738?fr=aladdin" target="_blank" rel="external">acid （数据库事务正确执行的四个基本要素的缩写）</a></li></ul><h2 id="BASE思想"><a href="#BASE思想" class="headerlink" title="BASE思想"></a>BASE思想</h2><p>BASE模型反ACID模型，完全不同ACID模型，牺牲高一致性，获得可用性或可靠性：</p><ul><li>Basically Available 基本可用。基本可用是指分布式系统在出现故障的时候，允许损失部分可用性，即保证核心可用。</li><li>Soft state 软状态 状态可以有一段时间不同步，异步。软状态是指允许系统存在中间状态，而该中间状态不会影响系统整体可用性。分布式存储中一般一份数据至少会有三个副本，允许不同节点间副本同步的延时就是软状态的体现。</li><li>Eventually consistent 最终一致，最终数据是一致的就可以了，而不是时时高一致。最终一致性是指系统中的所有数据副本经过一定时间后，最终能够达到一致的状态。弱一致性和强一致性相反，最终一致性是弱一致性的一种特殊情况。</li></ul><p>ACID是传统数据库常用的设计理念，追求强一致性模型。BASE支持的是大型分布式系统，提出通过牺牲强一致性获得高可用性。</p><p>ACID和BASE代表了两种截然相反的设计哲学，在分布式系统设计的场景中，系统组件对一致性要求是不同的，因此ACID和BASE又会结合使用。</p><p>refs:</p><ul><li><a href="http://www.jdon.com/37625" target="_blank" rel="external">CAP原理和BASE思想</a></li><li><a href="http://www.cnblogs.com/exceptioneye/p/5452601.html" target="_blank" rel="external">分布式系统的BASE理论</a></li></ul><h2 id="ASR"><a href="#ASR" class="headerlink" title="ASR"></a>ASR</h2><p>ASR：重要的架构需求，会对架构产生深远影响的需求；</p><p>ASR的几种获取方法：需求文档，采访利益相关者，理解商业目标，效应数；</p><h2 id="SOA模型"><a href="#SOA模型" class="headerlink" title="SOA模型"></a>SOA模型</h2><p>面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）通过这些服务之间定义良好的接口和契约联系起来。</p><p>SOA的精髓是严格的松散耦合，大家按照一个契约（service interface）来进行交流，不允许shared memory，不允许back door，不允许直接访问其它服务的数据。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;AOP思想&quot;&gt;&lt;a href=&quot;#AOP思想&quot; class=&quot;headerlink&quot; title=&quot;AOP思想&quot;&gt;&lt;/a&gt;AOP思想&lt;/h2&gt;&lt;p&gt;AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。&lt;/p&gt;
-&lt;p&gt;这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。&lt;/p&gt;
     
     </summary>
     
