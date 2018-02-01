@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="chrome 更新至58.0后，部分用户会发现xx-net无法使用，并提示“请检查浏览器代理设置”，且日志中反复出现 con failed（连接失败），解决方法如下： 1.将xx-net更新至测试版3.3.2或者稳定版3.3.1下载地址： https://github.com/XX-net/XX-Net/blob/master/code/default/download.md2.删除安装文件夹/d">
+<meta name="description" content="这篇博客介绍了六种生成词向量的模型，分别是神经语言模型（NNLM）、对数双线性语言模型(LBLM)、C&amp;amp;W模型、CBOW模型、skip-gram模型、（Order模型）、GloVe模型。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chrome更新至58.0后XX.net无法使用，提示“请检查浏览器代理设置”的解决方案">
-<meta property="og:url" content="http://yoursite.com/2017/05/26/Chrome更新至58-0后XX-net无法使用，提示“请检查浏览器代理设置”的解决方案/index.html">
+<meta property="og:title" content="【论文笔记】词向量的生成与语言模型(开发中...)">
+<meta property="og:url" content="http://yoursite.com/2018/01/20/【论文笔记】词向量的生成与语言模型/index.html">
 <meta property="og:site_name" content="More Than Codes">
-<meta property="og:description" content="chrome 更新至58.0后，部分用户会发现xx-net无法使用，并提示“请检查浏览器代理设置”，且日志中反复出现 con failed（连接失败），解决方法如下： 1.将xx-net更新至测试版3.3.2或者稳定版3.3.1下载地址： https://github.com/XX-net/XX-Net/blob/master/code/default/download.md2.删除安装文件夹/d">
+<meta property="og:description" content="这篇博客介绍了六种生成词向量的模型，分别是神经语言模型（NNLM）、对数双线性语言模型(LBLM)、C&amp;amp;W模型、CBOW模型、skip-gram模型、（Order模型）、GloVe模型。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-05T09:23:36.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/20/【论文笔记】词向量的生成与语言模型/figure3.png">
+<meta property="og:updated_time" content="2018-02-01T07:27:15.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chrome更新至58.0后XX.net无法使用，提示“请检查浏览器代理设置”的解决方案">
-<meta name="twitter:description" content="chrome 更新至58.0后，部分用户会发现xx-net无法使用，并提示“请检查浏览器代理设置”，且日志中反复出现 con failed（连接失败），解决方法如下： 1.将xx-net更新至测试版3.3.2或者稳定版3.3.1下载地址： https://github.com/XX-net/XX-Net/blob/master/code/default/download.md2.删除安装文件夹/d">
+<meta name="twitter:title" content="【论文笔记】词向量的生成与语言模型(开发中...)">
+<meta name="twitter:description" content="这篇博客介绍了六种生成词向量的模型，分别是神经语言模型（NNLM）、对数双线性语言模型(LBLM)、C&amp;amp;W模型、CBOW模型、skip-gram模型、（Order模型）、GloVe模型。">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/20/【论文笔记】词向量的生成与语言模型/figure3.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/26/Chrome更新至58-0后XX-net无法使用，提示“请检查浏览器代理设置”的解决方案/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/20/【论文笔记】词向量的生成与语言模型/"/>
 
 
 
 
 
-  <title>Chrome更新至58.0后XX.net无法使用，提示“请检查浏览器代理设置”的解决方案 | More Than Codes</title>
+  <title>【论文笔记】词向量的生成与语言模型(开发中...) | More Than Codes</title>
   
 
 
@@ -276,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/Chrome更新至58-0后XX-net无法使用，提示“请检查浏览器代理设置”的解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/【论文笔记】词向量的生成与语言模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金成能">
@@ -293,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chrome更新至58.0后XX.net无法使用，提示“请检查浏览器代理设置”的解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">【论文笔记】词向量的生成与语言模型(开发中...)</h1>
         
 
         <div class="post-meta">
@@ -305,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:24:53+08:00">
-                2017-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T17:31:32+08:00">
+                2018-01-20
               </time>
             
 
@@ -337,7 +339,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  279 字
+                  291 字
                 </span>
               
 
@@ -374,9 +376,21 @@
       
 
       
-        <p>chrome 更新至58.0后，部分用户会发现xx-net无法使用，并提示“请检查浏览器代理设置”，且日志中反复出现 con failed（连接失败），解决方法如下：</p>
-<p>1.将xx-net更新至测试版3.3.2或者稳定版3.3.1<br>下载地址： <a href="https://github.com/XX-net/XX-Net/blob/master/code/default/download.md" target="_blank" rel="external">https://github.com/XX-net/XX-Net/blob/master/code/default/download.md</a><br>2.删除安装文件夹/data/gae_proxy文件夹下的certs文件夹和CA.crt文件<br>3.在Chrome游览器的设置中删除已导入的xx-net的证书，删除方法参考官方文档<a href="https://github.com/XX-net/XX-Net/wiki/%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF" target="_blank" rel="external">https://github.com/XX-net/XX-Net/wiki/%E8%AF%81%E4%B9%A6%E9%94%99%E8%AF%AF</a><br>（删除后，如有必要请重新手动添加证书，不过大多数情况下该步骤都能自动完成）<br>4.检查SwitchyOmega的代理设置（如果没有更改过可跳过该步骤）<br>5.启动xx-net，如无意外，xx-net可正常运行<br>（升级xx-net可能需要重新部署服务端并配置，可参考官方文档<a href="https://github.com/XX-net/XX-Net/wiki/how-to-create-my-appids" target="_blank" rel="external">https://github.com/XX-net/XX-Net/wiki/how-to-create-my-appids</a> ）</p>
-<p>如有疑问，请留言讨论</p>
+        <p>这篇博客介绍了六种生成词向量的模型，分别是神经语言模型（NNLM）、对数双线性语言模型(LBLM)、C&amp;W模型、CBOW模型、skip-gram模型、（Order模型）、GloVe模型。</p>
+<a id="more"></a>
+<h2 id="神经语言模型（NNLM）"><a href="#神经语言模型（NNLM）" class="headerlink" title="神经语言模型（NNLM）"></a>神经语言模型（NNLM）</h2><p><img src="figure3.png" alt=""></p>
+<p>Yoshua Bengio及其同事首先提出了一种同时学习词向量和语言模型的神经网络语言模型（NNLM）。 对于语料库中的每个样本，给出前面的词，我们使最后一个词的概率的对数似然最大化。 例如，对于语料库中的序列$w_1,w_2,…,w_n$，我们需要最大化$P(w_n|w_1,w<em>2,…,w</em>{n-1})$的对数似然性，其中我们把要预测的单词 $(w_n)$作为目标词。这个模型使用前面的词向量的串联作为输入：<br> <span>$$\begin{align}
+    \begin{split}
+        x=[e(w_1),...,e(w_{n-2}),e(w_{n-1})]
+    \end{split}
+\end{align}$$</span><!-- Has MathJax --></p>
+<p> 模型结构是一个带有一个隐藏层的前馈神经网络：<br> <span>$$\begin{align}
+    \begin{split}
+        h &amp;= tanh(d + Hx) \\
+        y &amp;= b + Uh
+    \end{split}
+\end{align}$$</span><!-- Has MathJax --></p>
+<p>其中$U$是变换矩阵，$b$和$d$是偏差向量。最后一步是应用softmax层来获得目标词的概率。</p>
 
       
     </div>
@@ -401,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/Number/" rel="next" title="【LeetCode刷题记录】9. Palindrome Number">
-                <i class="fa fa-chevron-left"></i> 【LeetCode刷题记录】9. Palindrome Number
+              <a href="/2018/01/18/【论文笔记】评价词向量性能的八个任务/" rel="next" title="【论文笔记】评价词向量性能的八个任务">
+                <i class="fa fa-chevron-left"></i> 【论文笔记】评价词向量性能的八个任务
               </a>
             
           </div>
@@ -411,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/10/16-04中无法打开的解决方案/" rel="prev" title="robo3t 1.1在ubuntu 16.04中无法打开的解决方案">
-                robo3t 1.1在ubuntu 16.04中无法打开的解决方案 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/01/TAIL CAMP NLP Task1/" rel="prev" title="【TAIL CAMP】NLP Task：句子语义相似度预测">
+                【TAIL CAMP】NLP Task：句子语义相似度预测 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -465,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -514,6 +537,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经语言模型（NNLM）"><span class="nav-number">1.</span> <span class="nav-text">神经语言模型（NNLM）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
