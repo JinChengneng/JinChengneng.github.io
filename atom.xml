@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-01T07:25:17.211Z</updated>
+  <updated>2018-02-10T07:00:42.473Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【TAIL CAMP】NLP Task：手写作文自动评分</title>
+    <link href="http://yoursite.com/2018/02/10/TAIL%20CAMP%20NLP%20Task2/"/>
+    <id>http://yoursite.com/2018/02/10/TAIL CAMP NLP Task2/</id>
+    <published>2018-02-10T06:55:30.000Z</published>
+    <updated>2018-02-10T07:00:42.473Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h2><ul><li>学习使用textblob</li><li>学习readability的计算方法和相关工具</li><li>自动作文评分理论与方法学习</li></ul><a id="more"></a><h2 id="Day-1-安装并学习使用-textblob-工具，学习parsing相关知识"><a href="#Day-1-安装并学习使用-textblob-工具，学习parsing相关知识" class="headerlink" title="Day 1: 安装并学习使用 textblob 工具，学习parsing相关知识"></a>Day 1: 安装并学习使用 textblob 工具，学习parsing相关知识</h2><p>  今天我们将学习使用另一个nlp常用工具textblob，通过使用这个工具，学习其中的Part-of-speech Tagging，Spelling Correction，n-gram等概念</p><ol><li>阅读<a href="http://www.nltk.org/book/ch08-extras.html" target="_blank" rel="external">nltk book 第八章节</a>，学习parsing概念</li></ol><ol><li>安装<a href="http://textblob.readthedocs.io/en/dev/install.html" target="_blank" rel="external">textblob</a></li></ol><ol><li>学习<a href="http://textblob.readthedocs.io/en/dev/quickstart.html#quickstart" target="_blank" rel="external">textblob功能点</a></li></ol><h2 id="Day2-学习Readability的定义和计算方法，学习使用工具textstat-和-readability。"><a href="#Day2-学习Readability的定义和计算方法，学习使用工具textstat-和-readability。" class="headerlink" title="Day2: 学习Readability的定义和计算方法，学习使用工具textstat 和 readability。"></a>Day2: 学习Readability的定义和计算方法，学习使用工具textstat 和 readability。</h2><p>今天我们学习nlp中文章可读性的定义和计算方法，同时会用工具去计算。文章的可读性在自动作文评分，分级阅读等领域都有应用。   </p><ol><li><p>学习<a href="https://en.wikipedia.org/wiki/Readability_test" target="_blank" rel="external">readability的定义</a></p></li><li><p>学习使用工具 <a href="https://pypi.python.org/pypi/textstat/" target="_blank" rel="external">textstat</a></p></li><li><p>学习使用工具 <a href="https://pypi.python.org/pypi/readability" target="_blank" rel="external">readability</a></p></li></ol><h2 id="Day3-学习Keras的安装和使用"><a href="#Day3-学习Keras的安装和使用" class="headerlink" title="Day3: 学习Keras的安装和使用"></a>Day3: 学习Keras的安装和使用</h2><p>今天我们学习Keras,掌握一种快速搭建和使用深度神经网络的工具，可选择用于后面建立基于深度学习的自动作文评分</p><ol><li><p>Keras 的介绍和安装 <a href="http://keras-cn.readthedocs.io/en/latest/" target="_blank" rel="external">中文版本</a><br><a href="https://keras.io/#installation" target="_blank" rel="external">英文版本</a></p></li><li><p>学习使用keras <a href="http://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/" target="_blank" rel="external">中文教程</a></p></li></ol><ol><li>使用keras对文本进行处理和编码 <a href="https://keras-cn.readthedocs.io/en/latest/preprocessing/text/" target="_blank" rel="external">中文教程</a></li></ol><h2 id="Day4-amp-5-阅读论文，学习自动作文评分的理论和方法"><a href="#Day4-amp-5-阅读论文，学习自动作文评分的理论和方法" class="headerlink" title="Day4&amp;5: 阅读论文，学习自动作文评分的理论和方法"></a>Day4&amp;5: 阅读论文，学习自动作文评分的理论和方法</h2><p>前面几天我们已经学习了可以用来进行自动作文评分的一些概念和方法，接下来，我们通过阅读几片论文，了解和学习目前自动作文评分的主流的理论和方法。人工进行特征选择的方案，能够给写作文的用户带来更多的反馈信息，一定程度可以指导用户在弱项上进行提升；相比之下，基于深度学习的方法可能可以得到好的性能，但是是一个黑盒，从中没有办法获得更多的反馈；大家根据个人情况，可以充分发挥，例如做一些混合的系统等。以下内容作为同学们实现系统的参考：</p><p>参考阅读材料：</p><p><a href="https://www.researchgate.net/publication/278383803_Task-Independent_Features_for_Automated_Essay_Grading" target="_blank" rel="external">人工进行特征选择的评分系统</a></p><p><a href="http://www.aclweb.org/old_anthology/D/D16/D16-1193.pdf" target="_blank" rel="external">基于深度学习方法的评分系统</a></p><p>目前市面上比较权威的一个系统：<a href="https://www.ets.org/Media/Research/pdf/RR-04-45.pdf" target="_blank" rel="external">ETS的e-rater评分系统</a></p><h2 id="Day6-设计方案，进行机器自动评分"><a href="#Day6-设计方案，进行机器自动评分" class="headerlink" title="Day6: 设计方案，进行机器自动评分"></a>Day6: 设计方案，进行机器自动评分</h2><p>下面的链接是使用基于深度学习的方法进行作文自动评分的样例（前面提供论文的一个实现），可以作为一个实现方案的参考，同时大家可以自行设计自己的网络拓扑去做一些实验尝试。</p><p>此外，需要注意的是，我们选择的数据比样例少，所以考虑使用cpu模式去做实验，而样例使用了gpu模式。</p><p> <a href="https://github.com/nusnlp/nea" target="_blank" rel="external">参考链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;主要目标&quot;&gt;&lt;a href=&quot;#主要目标&quot; class=&quot;headerlink&quot; title=&quot;主要目标&quot;&gt;&lt;/a&gt;主要目标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;学习使用textblob&lt;/li&gt;
+&lt;li&gt;学习readability的计算方法和相关工具&lt;/li&gt;
+&lt;li&gt;自动作文评分理论与方法学习&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【TAIL CAMP】NLP Task：句子语义相似度预测</title>
