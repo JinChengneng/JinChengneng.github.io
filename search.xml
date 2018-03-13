@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【面试经验】微信搜索推荐团队机器学习数据挖掘实习生]]></title>
+    <url>%2F2018%2F03%2F13%2F%E3%80%90%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C%E3%80%91%E5%BE%AE%E4%BF%A1%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90%E5%9B%A2%E9%98%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%B9%A0%E7%94%9F%2F</url>
+    <content type="text"><![CDATA[简单记录了面试过程中的问题，以供自己复习归纳和同方向的同学参考借鉴。 职业规划 你能在公司工作工作到几月？每星期能到岗多久？ 你打算读研吗？ 算法 在一个经过排序的数组中插入一个数，返回该数的下标。（二分查找） find the index of the insert position:[1,3,5,9] 3 return 1 [1,3,5,9] 0 return 0 [1,3,5,9] 40 return 4 找到一个数组中的最大和子数组。（动态规划） find the subarray in a list has the largest sum [-2, 1,-3,4,-1,2,1,-5,4] [4,-1,2,1] has the biggest return 6 机器学习和项目经验 有哪些聚类方法？讲一下工作原理。 什么是过拟合？有哪些防止过拟合的方法？ 有哪些正则化的方法？ 有哪些降维的方法？你用过哪些？（深度学习和机器学习领域） 你了解L（1）L（2）吗？原理是什么？ 机器学习有哪些常用的包？用过sklearn吗？ 讲一个你喜欢的人工智能的现实应用。 你打的这几道赛题数据量是多少？有数据量大的项目经验吗？ 项目里用过深度学习吗？RNN和LSTM有什么区别？LSTM的原理是什么？ linear regression和logistic regression的区别在哪里？]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[【TAIL CAMP】NLP Task：手写作文自动评分]]></title>
     <url>%2F2018%2F02%2F10%2FTAIL%20CAMP%20NLP%20Task2%2F</url>
     <content type="text"><![CDATA[主要目标 学习使用textblob 学习readability的计算方法和相关工具 自动作文评分理论与方法学习 Day 1: 安装并学习使用 textblob 工具，学习parsing相关知识 今天我们将学习使用另一个nlp常用工具textblob，通过使用这个工具，学习其中的Part-of-speech Tagging，Spelling Correction，n-gram等概念 阅读nltk book 第八章节，学习parsing概念 安装textblob 学习textblob功能点 Day2: 学习Readability的定义和计算方法，学习使用工具textstat 和 readability。今天我们学习nlp中文章可读性的定义和计算方法，同时会用工具去计算。文章的可读性在自动作文评分，分级阅读等领域都有应用。 学习readability的定义 学习使用工具 textstat 学习使用工具 readability Day3: 学习Keras的安装和使用今天我们学习Keras,掌握一种快速搭建和使用深度神经网络的工具，可选择用于后面建立基于深度学习的自动作文评分 Keras 的介绍和安装 中文版本英文版本 学习使用keras 中文教程 使用keras对文本进行处理和编码 中文教程 Day4&amp;5: 阅读论文，学习自动作文评分的理论和方法前面几天我们已经学习了可以用来进行自动作文评分的一些概念和方法，接下来，我们通过阅读几片论文，了解和学习目前自动作文评分的主流的理论和方法。人工进行特征选择的方案，能够给写作文的用户带来更多的反馈信息，一定程度可以指导用户在弱项上进行提升；相比之下，基于深度学习的方法可能可以得到好的性能，但是是一个黑盒，从中没有办法获得更多的反馈；大家根据个人情况，可以充分发挥，例如做一些混合的系统等。以下内容作为同学们实现系统的参考： 参考阅读材料： 人工进行特征选择的评分系统 基于深度学习方法的评分系统 目前市面上比较权威的一个系统：ETS的e-rater评分系统 Day6: 设计方案，进行机器自动评分下面的链接是使用基于深度学习的方法进行作文自动评分的样例（前面提供论文的一个实现），可以作为一个实现方案的参考，同时大家可以自行设计自己的网络拓扑去做一些实验尝试。 此外，需要注意的是，我们选择的数据比样例少，所以考虑使用cpu模式去做实验，而样例使用了gpu模式。 参考链接]]></content>
