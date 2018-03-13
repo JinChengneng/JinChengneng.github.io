@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-13T06:02:38.409Z</updated>
+  <updated>2018-03-13T07:46:41.606Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【基础算法】刷题记录 2018-03-13</title>
+    <link href="http://yoursite.com/2018/03/13/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%2020180313/"/>
+    <id>http://yoursite.com/2018/03/13/【基础算法】刷题记录 20180313/</id>
+    <published>2018-03-13T06:58:56.000Z</published>
+    <updated>2018-03-13T07:46:41.606Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>二维数组中的查找</li><li>二分查找</li><li>连续子数组的最大和</li></ul><a id="more"></a><h2 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p><h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找。当要查找数字比左下角数字大时，右移；要查找数字比左下角数字小时，上移。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> target, <span class="keyword">int</span> [][] array)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> y = array[<span class="number">0</span>].length -<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(x&lt;array[<span class="number">0</span>].length &amp;&amp; y&gt;=<span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(array[x][y] &gt; target)&#123;</div><div class="line">                y -= <span class="number">1</span>;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(array[x][y] &lt; target)&#123;</div><div class="line">                x += <span class="number">1</span>;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>对于一个有序数组，我们通常采用二分查找的方式来定位某一元素，请编写二分查找的算法，在数组中查找指定元素。<br>给定一个整数数组A及它的大小n，同时给定要查找的元素val，请返回它在数组中的位置(从0开始)，若不存在该元素，返回-1。若该元素出现多次，请返回第一次出现的位置。</p><h3 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h3><p>  [4,4,8,10] 4 4 按常规二分查找返回的是1，本题应返回的是0</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPos</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> n, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> right = n-<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</div><div class="line">            <span class="keyword">int</span> current = (left+right)/<span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span>(val &lt; A[current])&#123;</div><div class="line">                right = current -<span class="number">1</span>;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (val &gt; A[current])&#123;</div><div class="line">                left = current +<span class="number">1</span>;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">while</span>(current &gt; <span class="number">0</span> &amp;&amp; A[current-<span class="number">1</span>] == A[current])&#123;</div><div class="line">                    current -= <span class="number">1</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> current;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="连续最大和"><a href="#连续最大和" class="headerlink" title="连续最大和"></a>连续最大和</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>一个数组有 N 个元素，求连续子数组的最大和。 例如：[-1,2,1]，和最大的连续子数组为[2,1]，其和为 3 </p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>动态规划。<br>如果用函数 f(i)表示以第 i 个数字结尾的子数组的最大和，那么我们需要求出 max[f(i)]，其中 0 &lt;= i &lt; n。我们可用如下边归公式求 f(i):</p><span>$$f(i)=\begin{cases}pData[i]&amp; \text{i=0 or f(i-1) &lt;= 0}\\f(i-1)+pData[i]&amp; \text{i!=0 and f(i-1)&gt;0}\end{cases}$$</span><!-- Has MathJax --><p>这个公式的意义：当以第 i-1 个数字结尾的子数组中所有数字的和小于 0 时，如果把这个负数与第 i 个数累加，得到的结果比第 i 个数字本身还要小，所以这种情况下以第 i 个数字结尾的子数组就是第 i 个数字本身。如果以第 i-1 个数字结尾的子数组中所有数字的和大于 0，与第 i 个数字累加就得到以第 i 个数字结尾的子数组中所有数字的和。</p><h3 id="易错点-1"><a href="#易错点-1" class="headerlink" title="易错点"></a>易错点</h3><p>很容易忽略全都是负数的情况，例如[-1,-2,-3,-4]。</p><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">    <span class="keyword">int</span> a[n];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</div><div class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> max =a[<span class="number">0</span>];</div><div class="line">    <span class="keyword">int</span> curMax = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;n; j++)&#123;</div><div class="line">        <span class="keyword">if</span>(curMax &lt; <span class="number">0</span>)&#123;</div><div class="line">            curMax =a[j];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            curMax += a[j];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(max &lt; curMax)&#123;</div><div class="line">            max = curMax;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;max;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;二维数组中的查找&lt;/li&gt;
+&lt;li&gt;二分查找&lt;/li&gt;
+&lt;li&gt;连续子数组的最大和&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【面试经验】微信搜索推荐团队机器学习数据挖掘实习生</title>
@@ -115,24 +137,6 @@
   </entry>
   
   <entry>
-    <title>【机器学习】（开发中...）</title>
-    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E3%80%81%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
-    <id>http://yoursite.com/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/</id>
-    <published>2017-11-18T04:27:56.000Z</published>
-    <updated>2018-01-18T13:21:14.153Z</updated>
-    
-    <content type="html"><![CDATA[<p>正在开发中…<br><a id="more"></a><br>$F_{\mu}$<br>$F_a + F_b = F_c$</p><p>$F_a = F_b + F_c + F_{\mu}$</p><p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p><span>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\\dot{y} &amp; = \rho x - y - xz \\\dot{z} &amp; = -\beta z + xy\end{aligned}$$</span><!-- Has MathJax --><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul><li>进一步理解线性回归和梯度下降的原理。</li><li>在小规模数据集上实践。</li><li>体会优化和调参的过程。</li></ul><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul><li>线性回归使用的是LIBSVM Data中的Housing数据，包含506个样本，每个样本有13个属性。请自行下载scaled版本，并将其切分为训练集，验证集。 </li><li>线性分类使用的是LIBSVM Data中的australian数据，包含690个样本，每个样本有14 个属性。请自行下载scaled版本，并将其切分为训练集，验证集。</li></ul><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="线性回归和梯度下降"><a href="#线性回归和梯度下降" class="headerlink" title="线性回归和梯度下降"></a>线性回归和梯度下降</h3><ol><li>读取实验数据，使用sklearn库的load_svmlight_file函数读取数据。</li><li>将数据集切分为训练集和验证集，本次实验不切分测试集。使用train_test_split函数切分数据集。</li><li>线性模型参数初始化，可以考虑全零初始化，随机初始化或者正态分布初始化。<br>选择Loss函数及对其求导，过程详见课件ppt。<br>求得所有样本对Loss函数的梯度。<br>取梯度的负方向，记为。<br>更新模型参数，。为学习率，是人为调整的超参数。<br>在训练集上测试并得到Loss函数值，在验证集上测试并得到Loss函数值。<br>重复步骤5-8若干次，画出和随迭代次数的变化图。<br>$F$</li></ol><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;正在开发中…&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>【基础定义】异构数据融合与共享项目基础定义总结</title>
     <link href="http://yoursite.com/2017/11/18/%E3%80%90%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E3%80%91%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/11/18/【基础定义】异构数据融合与共享基础定义总结/</id>
@@ -145,6 +149,24 @@
     
       &lt;h2 id=&quot;AOP思想&quot;&gt;&lt;a href=&quot;#AOP思想&quot; class=&quot;headerlink&quot; title=&quot;AOP思想&quot;&gt;&lt;/a&gt;AOP思想&lt;/h2&gt;&lt;p&gt;AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。&lt;/p&gt;
 &lt;p&gt;这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【机器学习】（开发中...）</title>
+    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E3%80%81%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
+    <id>http://yoursite.com/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/</id>
+    <published>2017-11-18T04:27:56.000Z</published>
+    <updated>2018-01-18T13:21:14.153Z</updated>
+    
+    <content type="html"><![CDATA[<p>正在开发中…<br><a id="more"></a><br>$F_{\mu}$<br>$F_a + F_b = F_c$</p><p>$F_a = F_b + F_c + F_{\mu}$</p><p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p><span>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\\dot{y} &amp; = \rho x - y - xz \\\dot{z} &amp; = -\beta z + xy\end{aligned}$$</span><!-- Has MathJax --><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul><li>进一步理解线性回归和梯度下降的原理。</li><li>在小规模数据集上实践。</li><li>体会优化和调参的过程。</li></ul><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul><li>线性回归使用的是LIBSVM Data中的Housing数据，包含506个样本，每个样本有13个属性。请自行下载scaled版本，并将其切分为训练集，验证集。 </li><li>线性分类使用的是LIBSVM Data中的australian数据，包含690个样本，每个样本有14 个属性。请自行下载scaled版本，并将其切分为训练集，验证集。</li></ul><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="线性回归和梯度下降"><a href="#线性回归和梯度下降" class="headerlink" title="线性回归和梯度下降"></a>线性回归和梯度下降</h3><ol><li>读取实验数据，使用sklearn库的load_svmlight_file函数读取数据。</li><li>将数据集切分为训练集和验证集，本次实验不切分测试集。使用train_test_split函数切分数据集。</li><li>线性模型参数初始化，可以考虑全零初始化，随机初始化或者正态分布初始化。<br>选择Loss函数及对其求导，过程详见课件ppt。<br>求得所有样本对Loss函数的梯度。<br>取梯度的负方向，记为。<br>更新模型参数，。为学习率，是人为调整的超参数。<br>在训练集上测试并得到Loss函数值，在验证集上测试并得到Loss函数值。<br>重复步骤5-8若干次，画出和随迭代次数的变化图。<br>$F$</li></ol><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;正在开发中…&lt;br&gt;
     
     </summary>
     
