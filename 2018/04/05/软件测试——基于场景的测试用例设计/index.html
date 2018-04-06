@@ -87,7 +87,7 @@
 <meta property="og:description" content="问题用场景法完成ATM的取款功能的测试用例设计。 步骤 画出需要测试路径的流程图 分析基本流和备选流 根据基本流和备选流设计测试用例">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/JinChengneng/images/master/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%E4%BA%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
-<meta property="og:updated_time" content="2018-04-06T06:54:13.708Z">
+<meta property="og:updated_time" content="2018-04-06T07:06:42.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="场景法测试用例设计">
 <meta name="twitter:description" content="问题用场景法完成ATM的取款功能的测试用例设计。 步骤 画出需要测试路径的流程图 分析基本流和备选流 根据基本流和备选流设计测试用例">
@@ -339,7 +339,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,232 字
+                  1,175 字
                 </span>
               
 
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -477,7 +477,145 @@
 </tr>
 </tbody>
 </table>
-<h3 id="测试用例表"><a href="#测试用例表" class="headerlink" title="测试用例表"></a>测试用例表</h3><p>假设正确密码为0000.<br>|测试用例号|场景号|合法的银行卡|输入密码| 密码错误次数| 取款金额|当日取款限额|账户余额|取款机余额|预期结果|<br>| :——–: | :—–:| :—–: | :—-: | :—–: | :—-: |  :—–: | :—-: | :—-: |  :—-: |<br>|1 | 场景1——成功取款|是| 0000 | 0 | 100 | 10000 |  200|10000| 成功提款，账户余额被更新为100  |<br>|2 |场景2——银行卡无法读取 | 否 | / |  /| /  | / |/  |/| 无法获取账户信息，退回银行卡|<br>|3 | 场景3——密码输入错误但未超过三次 | 是 | 1111 |  1| /  |10000| / |/  |发送警告消息，返回基本流2|<br>|4 |场景4——密码输入错误且达到三次 | 是 | 1111 |  3| / |10000 | / |/  |发送警告消息，并吞卡|<br>|5 |场景5——用户输入提款金额超过单笔提款上限 | 是 | 0000 | 0| 20000  | 10000 |10000  |200000|发送提醒，并返回基本流3|<br>|6|场景6——用户输入金额不是整百数|是|0000|0|201.12|10000|10000|20000|发送提醒，并返回基本流3|<br>|7|场景7——用户24小时内提款金额超过限额|是|0000 | 0| 20000  | 10000 |10000  |200000|发送提醒，并返回基本流3|<br>|8|场景8——用户账户余额不足|是|0000 | 0| 20000  | 10000 |100  |200000|发送提醒，并返回基本流3|<br>|9|场景9——ATM提款机中余额不足|是|0000 | 0| 20000  | 10000 |10000  |2000|发送提醒，并返回基本流3|<br>|10|场景10——用户取款成功后有其他操作需求|是|0000|0|100|10000|200|10000|返回基本流2|</p>
+<h3 id="测试用例表"><a href="#测试用例表" class="headerlink" title="测试用例表"></a>测试用例表</h3><p>假设正确密码为0000.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">测试用例号</th>
+<th style="text-align:center">场景号</th>
+<th style="text-align:center">合法的银行卡</th>
+<th style="text-align:center">输入密码</th>
+<th style="text-align:center">密码错误次数</th>
+<th style="text-align:center">取款金额</th>
+<th style="text-align:center">当日取款限额</th>
+<th style="text-align:center">账户余额</th>
+<th style="text-align:center">取款机余额</th>
+<th style="text-align:center">预期结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">场景1——成功取款</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">200</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">成功提款，账户余额被更新为100</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">场景2——银行卡无法读取</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">无法获取账户信息，退回银行卡</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">场景3——密码输入错误但未超过三次</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">1111</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">发送警告消息，返回基本流2</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">场景4——密码输入错误且达到三次</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">1111</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">发送警告消息，并吞卡</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">场景5——用户输入提款金额超过单笔提款上限</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">200000</td>
+<td style="text-align:center">发送提醒，并返回基本流3</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">场景6——用户输入金额不是整百数</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">201.12</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">发送提醒，并返回基本流3</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">场景7——用户24小时内提款金额超过限额</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">200000</td>
+<td style="text-align:center">发送提醒，并返回基本流3</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">场景8——用户账户余额不足</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">200000</td>
+<td style="text-align:center">发送提醒，并返回基本流3</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">场景9——ATM提款机中余额不足</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:center">发送提醒，并返回基本流3</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">场景10——用户取款成功后有其他操作需求</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">200</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">返回基本流2</td>
+</tr>
+</tbody>
+</table>
 <h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><p>姓名：金成能 <br><br>学号：201530611838 <br><br>邮箱：jinchengneng@gmail.com <br><br>指导老师： 李红</p>
 
       
