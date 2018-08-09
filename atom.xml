@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-07T08:44:58.847Z</updated>
+  <updated>2018-08-09T11:21:13.794Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Intern for Business Analysis with eBay China Analytics Center 面试经验分享</title>
+    <link href="http://yoursite.com/2018/08/09/Intern%20for%20Business%20Analysis%20with%20eBay%20China%20Analytics%20Center/"/>
+    <id>http://yoursite.com/2018/08/09/Intern for Business Analysis with eBay China Analytics Center/</id>
+    <published>2018-08-09T10:11:42.000Z</published>
+    <updated>2018-08-09T11:21:13.794Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本情况"><a href="#基本情况" class="headerlink" title="基本情况"></a>基本情况</h2><p>Responsibilities:</p><ul><li>Use data mining and text mining technologies to drive innovation and impact business results.- Apply quantitative methods to interpret business information- Visualize information, design and generate data reports upon clients’ requests</li><li>Support the development of business initiatives by quantitative analysis and generate business insights- Communicate with working peers, effectively deliver key business findings</li><li>Provide technical expertise in at least one of areas: data manipulation, automation, business reporting, text mining and Hadoop technologies </li><li>Conduct ad-hoc projects, collaborate with global teams and take part in international projects </li></ul><p>工作职责：</p><ol><li>从eBay数据库中提取有效数据，通过分析来量化各项业务，用数据说话，帮助业务成长和决策；</li><li>针对具体业务研究业务开拓中的局限性或亮点，通过数学建模得出优化方案，成型后标准化模型使其成为产品；</li><li>制作并维护各个业务生态报表，及时反馈和深入分析变化根源；</li><li>数据可视化，流程自动化；</li><li>完成其他经理布置的任务。</li></ol><h2 id="面试流程及问题"><a href="#面试流程及问题" class="headerlink" title="面试流程及问题"></a>面试流程及问题</h2><ol><li>HR确认本人投递简历，确认到岗时间和实习时长，然后约了面试时间，因为人离公司比较远所以约了视频面试。</li><li><p>第一轮面试可能是mentor面，主要问的是基础知识、具体问题分析和人生规划</p><ol><li>决策树的训练过程</li><li>线性回归的原理和效果评价</li><li>传统机器学习方法和深度学习方法的本质区别</li><li>数据库SQL中的表连接（左右连接、上下连接）</li><li>概率论与数理统计里面的q-value</li><li>如何评价promotion的效果，跟什么进行比较比较客观</li><li><p>有没有用过R语言</p><p>其他零零碎碎的知识点基本都答上来了，除了q-value忘得一干二净，超级尴尬，但是mentor人超好安慰说没关系的一两个知识点忘记了是正常的。</p></li></ol></li><li><p>第二轮应该是主管面，主要考察思维能力和沟通能力</p><ol><li><p>第一个问题是“如果你有共享单车的全部数据，你想做些什么？”<br>问完之后会让你一直讲idea，类似头脑风暴。开放性的题目我就开始天马行空，讲了六七个点。</p><ol><li>用单车轨迹数据做热力图，设计合理停车点</li><li>做使用率统计分析最佳维修时间</li><li>做短时间单车未来使用率预测来实现动态定价</li><li>做长时间单车未来使用率预测来辅助非节日性促销时间选择</li><li>做用户画像分析，寻找用户聚类位置，进行个性化车身图案投放</li><li>做不同车型的用车时间分析，比较不同车型的用户使用感受</li></ol><p>这个问题进行过程中面试官不会跟你进行沟通，会一直问你“还有吗”“还有吗”，等你想不出来之后会总结一下他对你这些想法的看法，哪些点很普通哪些点有打动到他，然后会分享他自己的idea。</p></li><li><p>第二个问题是“给你全国所有人的名字，不借助任何外部资料，找出所有的复姓”。<br>面试官说这个问题比较challaging，也会在我给出答案的过程中一直跟我沟通。我给出一个解决方案，先利用所有四个字的名字找出大概率复姓，然后对这些复姓在三个字的名字中出现的概率进行验证。然后对于父母双方姓氏组合的“假复姓”，通过拆分寻找组成这个“假复姓”的每个字在姓氏中存在的概率进行验证。<br>面试官说答得很好，然后又针对我的解决方案，进一步把问题改成“给你全国所有三个字的名字，找出所有的复姓”。然后我懵逼了一会，整个思考方向就偏掉了。我提出了通过语言学姓名语调的分布规律进行统计，面试官说不是很好，然后给出了自己的想法，基于条件概率来做。他一说完我就意识到这是自然语言处理里面的tf-idf，然而回答的时候一点都没有想到。</p></li></ol></li><li><p>最后主管说比较满意，然后就是等HR的背景审核啦，eBay的面试就到此结束啦。</p></li></ol><h2 id="个人感受"><a href="#个人感受" class="headerlink" title="个人感受"></a>个人感受</h2><p>整个流程非常快，从发简历到最后面试结束中间基本没有很长的间隔。面试流程也比较简单，只有一轮技术面一轮开放性面试和两次跟HR的沟通。面试过程非常愉快，面试官不会刻意营造压力，会很轻松地跟你聊天，而且面试过程中都很尊重，面试官会先做自我介绍然后介绍自己组的业务情况，虽然面试官感觉年纪有点大但是没有架子，面试过程很舒服，令人很有好感。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;基本情况&quot;&gt;&lt;a href=&quot;#基本情况&quot; class=&quot;headerlink&quot; title=&quot;基本情况&quot;&gt;&lt;/a&gt;基本情况&lt;/h2&gt;&lt;p&gt;Responsibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use data mining and text mining
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>推免夏令营经验分享（同济 上财 港中大）</title>
@@ -220,24 +243,6 @@
   </entry>
   
   <entry>
-    <title>【机器学习】（开发中...）</title>
-    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E3%80%81%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
-    <id>http://yoursite.com/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/</id>
-    <published>2017-11-18T04:27:56.000Z</published>
-    <updated>2018-01-18T13:21:14.153Z</updated>
-    
-    <content type="html"><![CDATA[<p>正在开发中…<br><a id="more"></a><br>$F_{\mu}$<br>$F_a + F_b = F_c$</p><p>$F_a = F_b + F_c + F_{\mu}$</p><p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p><span>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\\dot{y} &amp; = \rho x - y - xz \\\dot{z} &amp; = -\beta z + xy\end{aligned}$$</span><!-- Has MathJax --><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul><li>进一步理解线性回归和梯度下降的原理。</li><li>在小规模数据集上实践。</li><li>体会优化和调参的过程。</li></ul><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul><li>线性回归使用的是LIBSVM Data中的Housing数据，包含506个样本，每个样本有13个属性。请自行下载scaled版本，并将其切分为训练集，验证集。 </li><li>线性分类使用的是LIBSVM Data中的australian数据，包含690个样本，每个样本有14 个属性。请自行下载scaled版本，并将其切分为训练集，验证集。</li></ul><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="线性回归和梯度下降"><a href="#线性回归和梯度下降" class="headerlink" title="线性回归和梯度下降"></a>线性回归和梯度下降</h3><ol><li>读取实验数据，使用sklearn库的load_svmlight_file函数读取数据。</li><li>将数据集切分为训练集和验证集，本次实验不切分测试集。使用train_test_split函数切分数据集。</li><li>线性模型参数初始化，可以考虑全零初始化，随机初始化或者正态分布初始化。<br>选择Loss函数及对其求导，过程详见课件ppt。<br>求得所有样本对Loss函数的梯度。<br>取梯度的负方向，记为。<br>更新模型参数，。为学习率，是人为调整的超参数。<br>在训练集上测试并得到Loss函数值，在验证集上测试并得到Loss函数值。<br>重复步骤5-8若干次，画出和随迭代次数的变化图。<br>$F$</li></ol><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;正在开发中…&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>【基础定义】异构数据融合与共享项目基础定义总结</title>
     <link href="http://yoursite.com/2017/11/18/%E3%80%90%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E3%80%91%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/11/18/【基础定义】异构数据融合与共享基础定义总结/</id>
@@ -250,6 +255,24 @@
     
       &lt;h2 id=&quot;AOP思想&quot;&gt;&lt;a href=&quot;#AOP思想&quot; class=&quot;headerlink&quot; title=&quot;AOP思想&quot;&gt;&lt;/a&gt;AOP思想&lt;/h2&gt;&lt;p&gt;AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。&lt;/p&gt;
 &lt;p&gt;这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【机器学习】（开发中...）</title>
+    <link href="http://yoursite.com/2017/11/18/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E3%80%81%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
+    <id>http://yoursite.com/2017/11/18/【机器学习】线性分类、线性回归和梯度下降/</id>
+    <published>2017-11-18T04:27:56.000Z</published>
+    <updated>2018-01-18T13:21:14.153Z</updated>
+    
+    <content type="html"><![CDATA[<p>正在开发中…<br><a id="more"></a><br>$F_{\mu}$<br>$F_a + F_b = F_c$</p><p>$F_a = F_b + F_c + F_{\mu}$</p><p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p><span>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\\dot{y} &amp; = \rho x - y - xz \\\dot{z} &amp; = -\beta z + xy\end{aligned}$$</span><!-- Has MathJax --><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul><li>进一步理解线性回归和梯度下降的原理。</li><li>在小规模数据集上实践。</li><li>体会优化和调参的过程。</li></ul><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul><li>线性回归使用的是LIBSVM Data中的Housing数据，包含506个样本，每个样本有13个属性。请自行下载scaled版本，并将其切分为训练集，验证集。 </li><li>线性分类使用的是LIBSVM Data中的australian数据，包含690个样本，每个样本有14 个属性。请自行下载scaled版本，并将其切分为训练集，验证集。</li></ul><h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="线性回归和梯度下降"><a href="#线性回归和梯度下降" class="headerlink" title="线性回归和梯度下降"></a>线性回归和梯度下降</h3><ol><li>读取实验数据，使用sklearn库的load_svmlight_file函数读取数据。</li><li>将数据集切分为训练集和验证集，本次实验不切分测试集。使用train_test_split函数切分数据集。</li><li>线性模型参数初始化，可以考虑全零初始化，随机初始化或者正态分布初始化。<br>选择Loss函数及对其求导，过程详见课件ppt。<br>求得所有样本对Loss函数的梯度。<br>取梯度的负方向，记为。<br>更新模型参数，。为学习率，是人为调整的超参数。<br>在训练集上测试并得到Loss函数值，在验证集上测试并得到Loss函数值。<br>重复步骤5-8若干次，画出和随迭代次数的变化图。<br>$F$</li></ol><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;正在开发中…&lt;br&gt;
     
     </summary>
     
