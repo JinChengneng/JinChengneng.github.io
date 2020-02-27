@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/JinChengneng/images/master/Qbittorrent_1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/JinChengneng/images/master/Qbittorrent_2.jpg">
-<meta property="og:updated_time" content="2018-12-18T08:00:07.012Z">
+<meta property="og:updated_time" content="2020-02-27T08:10:19.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【技术分享】程序员是怎么下电影的？">
 <meta name="twitter:description" content="最近有很多小伙伴问我怎么在网络上下载最新的或者版权保护比较严格的电影，今天就跟大家分享一下一个程序员是怎么下载资源的（以电影为例）。【重要声明】这篇博客仅供技术分享，仅探讨一种技术上可行的方案。在实际使用这种方案时，请确保该方案符合你所在地区的版权保护相关法律，并在技术测试后删除所有受保护的资源，切勿传播。">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  629 字
+                  845 字
                 </span>
               
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -396,7 +396,7 @@
 <li>很多视频播放软件也有内置的字幕搜索器，比如说小米手机自带的播放器就会自动搜索opensubtitle.org上的字幕文件，所以如果你惯用的视频播放器有这个功能的话，就可以跳过搜索字幕的步骤。</li>
 <li>推荐搜索时首选英语，种子数量更多，质量更高。</li>
 </ul>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> win10toast <span class="keyword">import</span> ToastNotifier</div><div class="line"></div><div class="line"><span class="comment"># 输入你的设置</span></div><div class="line">profileId = <span class="number">0000</span> <span class="comment">#输入你的profileId(从选课页面url中获取)</span></div><div class="line">wanted_course_ids = [<span class="string">'280030'</span>,<span class="string">'280031'</span>,<span class="string">'281135'</span>] <span class="comment">#输入你要监控的课程id（从选课页面点击课程介绍url获取）</span></div><div class="line">cookies_raw = <span class="string">''</span> <span class="comment">#输入你的cookies（按F12从Network里的Request Headers获取,或者搜索如何获取coockies）</span></div><div class="line">request_frequence = <span class="number">20</span> <span class="comment">#设定你的刷新频率(秒)</span></div><div class="line"></div><div class="line">COURSE_URL = <span class="string">"http://eams.sufe.edu.cn/eams/stdElectCourse!queryStdCount.action?profileId="</span></div><div class="line"></div><div class="line"><span class="comment"># 处理cookies</span></div><div class="line">cookies=&#123;&#125;<span class="comment">#初始化cookies字典变量</span></div><div class="line">cookies_arr =  cookies_raw.split(<span class="string">';'</span>)</div><div class="line"><span class="keyword">for</span> ck <span class="keyword">in</span> cookies_arr:</div><div class="line">    name,value=ck.strip().split(<span class="string">'='</span>,<span class="number">1</span>)</div><div class="line">    cookies[name]=value</div><div class="line"></div><div class="line">request_count = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    </div><div class="line">    time.sleep(request_frequence)</div><div class="line">    request_count += <span class="number">1</span></div><div class="line">    print(<span class="string">"正在监控课程余量，已请求"</span>,request_count,<span class="string">"次"</span>)</div><div class="line"></div><div class="line">    response = requests.get(COURSE_URL+str(profileId),cookies=cookies)</div><div class="line">    count_text = response.text</div><div class="line">    student_count_text = count_text.split(<span class="string">'window.lessonId2Counts='</span>)[<span class="number">1</span>]</div><div class="line"></div><div class="line">    replace_list = [<span class="string">'sc'</span>, <span class="string">'lc'</span>]</div><div class="line"></div><div class="line">    <span class="keyword">for</span> replace_text <span class="keyword">in</span> replace_list:</div><div class="line">        student_count_text = student_count_text.replace(</div><div class="line">            <span class="string">'&#123;&#125;:'</span>.format(replace_text), <span class="string">'"&#123;&#125;":'</span>.format(replace_text))</div><div class="line"></div><div class="line">    student_count_text = student_count_text.replace(<span class="string">"'"</span>, <span class="string">'"'</span>)</div><div class="line">    student_count_list = json.loads(student_count_text)</div><div class="line"></div><div class="line">    <span class="keyword">for</span> wanted_course_id <span class="keyword">in</span> wanted_course_ids:</div><div class="line">        course_count = student_count_list[wanted_course_id]</div><div class="line">        <span class="keyword">if</span> course_count[<span class="string">'sc'</span>] != course_count[<span class="string">'lc'</span>]:</div><div class="line">            toaster = ToastNotifier()</div><div class="line">            toaster.show_toast(<span class="string">u'快抢课'</span>, <span class="string">u'课程有余量了！'</span>)</div><div class="line">    <span class="keyword">break</span></div></pre></td></tr></table></figure>
       
     </div>
     
@@ -430,8 +430,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/17/【基础知识】机器学习中的线性代数/" rel="prev" title="【基础知识】机器学习中的线性代数">
-                【基础知识】机器学习中的线性代数 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/27/【技术分享】上海财经大学选课系统课程余量监控脚本/" rel="prev" title="【技术分享】上海财经大学选课系统课程余量监控脚本">
+                【技术分享】上海财经大学选课系统课程余量监控脚本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
