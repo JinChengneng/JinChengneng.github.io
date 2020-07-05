@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-27T08:52:07.001Z</updated>
+  <updated>2020-07-05T11:57:33.464Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【技术分享】基于百度地图的中国人口跨地区迁徙数据抓取</title>
+    <link href="http://yoursite.com/2020/07/05/%E3%80%90%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E3%80%91%E5%9F%BA%E4%BA%8E%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%8F%A3%E8%B7%A8%E5%9C%B0%E5%8C%BA%E8%BF%81%E5%BE%99%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/"/>
+    <id>http://yoursite.com/2020/07/05/【技术分享】基于百度地图的中国人口跨地区迁徙数据抓取/</id>
+    <published>2020-07-05T11:51:56.000Z</published>
+    <updated>2020-07-05T11:57:33.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇Blog分享了我在高级计量经济学课程论文研究过程中从百度地图慧眼抓取省市级人口跨地区迁徙数据和各省市迁徙规模指数数据的过程。<br><a id="more"></a></p><h2 id="使用提示与重要声明"><a href="#使用提示与重要声明" class="headerlink" title="使用提示与重要声明"></a>使用提示与重要声明</h2><ul><li><b>该脚本只是通过正常频率的模拟操作以实现数据的自动获取，调用的是百度地图慧眼的官方API，不对该系统进行任何形式的攻击与破坏；</b></li><li><b>本脚本完全开源，且保证初始参数设置不会对服务器造成显著影响，请在使用脚本的过程中遵守中华人民共和国网络安全法等相关发论法规，请勿通过高频率访问对服务器造成压力过载。因使用者滥用该脚本造成的一切责任，由使用者个人承担；</b></li><li><b>该脚本获取的数据归百度所有，仅限个人科研使用，应数据滥用造成的一切后果由使用者个人承担；</b></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇Blog分享了我在高级计量经济学课程论文研究过程中从百度地图慧眼抓取省市级人口跨地区迁徙数据和各省市迁徙规模指数数据的过程。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【技术分享】上海财经大学选课系统课程余量监控脚本</title>
@@ -386,31 +404,6 @@
 &lt;p&gt;这道题目实现并不难，但题目要求空间复杂度为O(1), 有一定的技巧性。&lt;/p&gt;
 &lt;h1 id=&quot;Solutions&quot;&gt;&lt;a href=&quot;#Solutions&quot; class=&quot;headerlink&quot; title=&quot;Solutions:&quot;&gt;&lt;/a&gt;Solutions:&lt;/h1&gt;&lt;h2 id=&quot;Solution-1&quot;&gt;&lt;a href=&quot;#Solution-1&quot; class=&quot;headerlink&quot; title=&quot;Solution 1:&quot;&gt;&lt;/a&gt;Solution 1:&lt;/h2&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; boolean &lt;span class=&quot;title&quot;&gt;isPalindrome&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; x)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; palindromeX = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; inputX = x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(x&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            palindromeX = palindromeX*&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; + (x % &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            x = x/&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; palindromeX==inputX;	&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;受到LeetCode 7.Reverse Integer 的启发，将原int型的数据完全反转后，比较反转后的数据与原数据是否相同，相同则为回文，反之不是。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode刷题记录】7.Reverse Integer</title>
-    <link href="http://yoursite.com/2017/04/25/Integer/"/>
-    <id>http://yoursite.com/2017/04/25/Integer/</id>
-    <published>2017-04-25T12:05:14.000Z</published>
-    <updated>2017-11-06T04:46:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h1><p>Reverse digits of an integer.</p><p>Example1: x = 123, return 321<br>Example2: x = -123, return -321</p><p>Have you thought about this?<br>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!</p><p>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.</p><p>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?</p><p>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p><p>Note:<br>The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.</p><p>解体思路：这道题目比较简单，难点在于溢出的判断与处理。</p><a id="more"></a><h1 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h1><h2 id="Solutions-1："><a href="#Solutions-1：" class="headerlink" title="Solutions 1："></a>Solutions 1：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">int reverse(int x) &#123;  </div><div class="line">        const int max = 0x7fffffff;  //int最大值  </div><div class="line">        const int min = 0x80000000;  //int最小值  </div><div class="line">        long long sum = 0;   </div><div class="line">          </div><div class="line">        while(x != 0)  </div><div class="line">        &#123;  </div><div class="line">            int temp = x % 10;  </div><div class="line">            sum = sum * 10 + temp;  </div><div class="line">            if (sum &gt; max || sum &lt; min)   //溢出处理  </div><div class="line">            &#123;  </div><div class="line">                sum = sum &gt; 0 ? max : min;    </div><div class="line">                return sum;  </div><div class="line">            &#125;  </div><div class="line">            x = x / 10;  </div><div class="line">        &#125;  </div><div class="line">        return sum;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure><p>将int数据类型能表示的最大值与最小值用十六进制表示出来，虽然有效，但是代码里0x7fffffff这种 hard code 不够优雅，而且容易出错。</p><h2 id="Improved-Solution-1"><a href="#Improved-Solution-1" class="headerlink" title="Improved Solution 1:"></a>Improved Solution 1:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public int reverse(int x) &#123;</div><div class="line">        long rev= 0;</div><div class="line">        while( x != 0)&#123;</div><div class="line">            rev= rev*10 + x % 10;</div><div class="line">            x= x/10;</div><div class="line">            if( rev &gt; Integer.MAX_VALUE || rev &lt; Integer.MIN_VALUE)</div><div class="line">                return 0;</div><div class="line">        &#125;</div><div class="line">        return (int) rev;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p>int数据类型能表现的上下限以 Integer.MAX_VALUE 和 Integer.MIN_VALUE 表示，更加优雅简洁。</p><h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2:"></a>Solution 2:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public int reverse(int x)</div><div class="line">&#123;</div><div class="line">    int result = 0;</div><div class="line"></div><div class="line">    while (x != 0)</div><div class="line">    &#123;</div><div class="line">        int tail = x % 10;</div><div class="line">        int newResult = result * 10 + tail;</div><div class="line">        if ((newResult - tail) / 10 != result)</div><div class="line">        &#123; return 0; &#125;</div><div class="line">        result = newResult;</div><div class="line">        x = x / 10;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>原理： If overflow exists, the new result will not equal to the previous one.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description:&quot;&gt;&lt;/a&gt;Description:&lt;/h1&gt;&lt;p&gt;Reverse digits of an integer.&lt;/p&gt;
-&lt;p&gt;Example1: x = 123, return 321&lt;br&gt;Example2: x = -123, return -321&lt;/p&gt;
-&lt;p&gt;Have you thought about this?&lt;br&gt;Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!&lt;/p&gt;
-&lt;p&gt;If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.&lt;/p&gt;
-&lt;p&gt;Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?&lt;/p&gt;
-&lt;p&gt;For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.&lt;/p&gt;
-&lt;p&gt;Note:&lt;br&gt;The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.&lt;/p&gt;
-&lt;p&gt;解体思路：这道题目比较简单，难点在于溢出的判断与处理。&lt;/p&gt;
     
     </summary>
     
